@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- ✅ Success message -->
+        <div class="alert alert-success" style="text-align: center; margin: 20px 0; padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;">
+            ✅ Successfully Entered Traffic Details!
+        </div>
+        <h2>Traffic Prediction Results</h2>
+
+        
+
+        <p><strong>Location:</strong> {{ location }}</p>
+        <p><strong>Textual Model Prediction:</strong> {{ "Smooth Traffic" if text_prediction == 0 else "Heavy Traffic" }}</p>
+        <p><strong>Final Prediction:</strong> {{ traffic_status }}</p>
+        
+       
+    </div>
+</body>
+</html>
